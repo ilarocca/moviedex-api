@@ -43,7 +43,7 @@ function handleGetTitle(req, res) {
   //check avg_vote query param, return titles greater than/equal to query number
   if (req.query.avg_vote) {
     response = response.filter(
-      (title) => title.avg_vote >= req.query.avg_vote.toLowerCase()
+      (title) => title.avg_vote >= req.query.avg_vote
     );
   }
 
