@@ -30,19 +30,21 @@ function handleGetTitle(req, res) {
   //check genre query param
   if (req.query.genre) {
     response = response.filter((title) =>
-      title.genre.toLowerCase().includes(req.query.genre)
+      title.genre.toLowerCase().includes(req.query.genre.toLowerCase())
     );
   }
   //check country query param
   if (req.query.country) {
     response = response.filter((title) =>
-      title.country.toLowerCase().includes(req.query.country)
+      title.country.toLowerCase().includes(req.query.country.toLowerCase())
     );
   }
 
   //check avg_vote query param, return titles greater than/equal to query number
   if (req.query.avg_vote) {
-    response = response.filter((title) => title.avg_vote >= req.query.avg_vote);
+    response = response.filter(
+      (title) => title.avg_vote >= req.query.avg_vote.toLowerCase()
+    );
   }
 
   //return response
