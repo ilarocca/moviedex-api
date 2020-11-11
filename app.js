@@ -36,7 +36,7 @@ function handleGetTitle(req, res) {
   //check country query param
   if (req.query.country) {
     response = response.filter((title) =>
-      title.country.toLowerCase().includes(req.query.country.toLowerCase())
+      title.country.toLowerCase().includes(req.query.country)
     );
   }
 
